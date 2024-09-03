@@ -235,6 +235,14 @@ var AppRate = (function() {
     }
   }
 
+  AppRate.isReadyToPrompt = function() {
+    return (preferences.usesUntilPrompt - counter.countdown) === 1 
+  }
+
+  AppRate.isAlreadyPrompted = function() {
+    return ( counter.countdown > preferences.usesUntilPrompt )  
+  }
+
   AppRate.init = function() {
     var appTitlePromise = getAppTitle()
       .then(function(displayAppName) {
