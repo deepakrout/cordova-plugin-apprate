@@ -243,6 +243,10 @@ var AppRate = (function() {
     return ( counter.countdown > preferences.usesUntilPrompt )  
   }
 
+  AppRate.updateCounter = function(action) {
+    updateCounter(action)
+  }
+
   AppRate.init = function() {
     var appTitlePromise = getAppTitle()
       .then(function(displayAppName) {
